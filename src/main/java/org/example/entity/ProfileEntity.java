@@ -40,6 +40,7 @@ public class ProfileEntity {
 
     @Column(name = "created_date")
     private LocalDateTime createdDate=LocalDateTime.now();
+
     @Column(name = "visible")
     private Boolean visible=Boolean.TRUE;
 }

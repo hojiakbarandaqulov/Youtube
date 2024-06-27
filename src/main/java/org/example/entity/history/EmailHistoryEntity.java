@@ -1,13 +1,13 @@
 package org.example.entity.history;
 
 import jakarta.persistence.*;
+import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
 
 import java.time.LocalDateTime;
 
-@Getter
-@Setter
+@Data
 @Entity
 @Table(name = "email_history")
 public class EmailHistoryEntity {

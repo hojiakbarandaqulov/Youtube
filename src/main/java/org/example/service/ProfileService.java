@@ -23,6 +23,7 @@ public class ProfileService {
     public ProfileDTO create(ProfileCreateDTO dto) {
             ProfileEntity save = profileRepository.save(toEntity(dto));
             return toDTO(save);
+
     }
 
     public ProfileEntity get(Long id) {

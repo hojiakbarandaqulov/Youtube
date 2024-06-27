@@ -31,4 +31,7 @@ build/
 
 ### VS Code ###
 .vscode/
+<<<<<<< HEAD
 /talablar.txt
+=======
+>>>>>>> 0a6e2a1c355a73973d55060a9f99b4767d77003f

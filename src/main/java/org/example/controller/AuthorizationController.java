@@ -33,7 +33,6 @@ public class AuthorizationController {
         String registration = authorizationService.registration(registrationDTO);
         return ResponseEntity.ok().body(registration);
     }
-    @PreAuthorize("")
     @PostMapping("/login")
     public ResponseEntity<AuthorizationResponseDTO> login(@Valid @RequestBody LoginDTO loginDTO){
         AuthorizationResponseDTO login = authorizationService.login(loginDTO);

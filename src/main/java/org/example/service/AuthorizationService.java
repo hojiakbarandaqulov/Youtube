@@ -107,9 +107,9 @@ public class AuthorizationService {
             throw new AppBadException("Email not exists");
         }
         ProfileEntity entity = optional.get();
-        if (!entity.getPassword().equals(MD5Util.getMD5(loginDTO.getPassword()))) {
-            throw new AppBadException("Wrong password");
-        }
+//        if (!entity.getPassword().equals(MD5Util.getMD5(loginDTO.getPassword()))) {
+//            throw new AppBadException("Wrong password");
+//        }
         if (!entity.getStatus().equals(ProfileStatus.ACTIVE)) {
             throw new AppBadException("Wrong status");
         }

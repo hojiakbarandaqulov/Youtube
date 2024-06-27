@@ -27,15 +27,31 @@ public class AuthorizationController {
         this.authorizationService = authorizationService;
     }
 
+    @PreAuthorize("hasRole('USER')")
     @PostMapping("/registration")
     @Operation(summary = "Registration", description = "Api for profile registration")
-    public ResponseEntity<String> registration(@RequestBody RegistrationDTO registrationDTO){
+    public ResponseEntity<String> registration(@Valid @RequestBody RegistrationDTO registrationDTO){
         String registration = authorizationService.registration(registrationDTO);
+        log .info("Registration name = {} email = {}",registrationDTO.getName(), registrationDTO.getEmail());
         return ResponseEntity.ok().body(registration);
     }
+
     @PostMapping("/login")
     public ResponseEntity<AuthorizationResponseDTO> login(@Valid @RequestBody LoginDTO loginDTO){
         AuthorizationResponseDTO login = authorizationService.login(loginDTO);
         return ResponseEntity.ok().body(login);
     }
+
+    @GetMapping("/verification/{userId}")
+    public ResponseEntity<String> verification(@PathVariable("userId") Long userId) {
+        String body = authorizationService.authorizationVerification(userId);
+        return ResponseEntity.ok().body(body);
+    }
+
+    @GetMapping("/registration/resend/{email}")
+    public ResponseEntity<String> registrationResend(@PathVariable("email") String email) {
+        String body = authorizationService.registrationResendEmail(email);
+        return ResponseEntity.ok().body(body);
+    }
+
 }

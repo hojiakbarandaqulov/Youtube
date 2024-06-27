@@ -21,7 +21,6 @@ import java.io.IOException;
 public class JwtTokenFilter extends OncePerRequestFilter {
     private final CustomUserDetailService customUserDetailService;
 
-    @Autowired
     public JwtTokenFilter(CustomUserDetailService customUserDetailService) {
         this.customUserDetailService = customUserDetailService;
     }

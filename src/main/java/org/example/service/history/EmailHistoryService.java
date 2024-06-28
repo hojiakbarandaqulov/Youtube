@@ -3,6 +3,7 @@ package org.example.service.history;
 import org.example.dto.history.EmailDTO;
 import org.example.dto.history.EmailFilterDTO;
 import org.example.entity.history.EmailHistoryEntity;
+import org.example.enums.EmailHistoryStatus;
 import org.example.exp.AppBadException;
 import org.example.repository.EmailHistoryRepository;
 import org.example.entity.history.EmailHistoryEntity;
@@ -24,15 +25,15 @@ public class EmailHistoryService {
         this.emailHistoryRepository = emailHistoryRepository;
     }
 
-    public String crete(String toEmail, String text) {
+    public void crete(String toEmail, String text) {
         EmailHistoryEntity entity = new EmailHistoryEntity();
         if (toEmail.equals(entity.getEmail())) {
             throw new AppBadException("Email is already in use");
         }
         entity.setEmail(toEmail);
         entity.setMessage(text);
+        entity.setStatus(EmailHistoryStatus.SENT);
         emailHistoryRepository.save(entity);
-        return null;
     }
 
     public void checkEmailLimit(String email) { // 1 minute -3 attempt

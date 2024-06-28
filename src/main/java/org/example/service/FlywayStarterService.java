@@ -16,7 +16,7 @@ public class FlywayStarterService implements CommandLineRunner {
 
     @Override
     public void run(String... args) throws Exception {
-        System.out.println("FlywayStarterService");
+//        System.out.println("FlywayStarterService");
         Flyway.configure().baselineOnMigrate(true).dataSource(dataSource).load().migrate();
     }
 }

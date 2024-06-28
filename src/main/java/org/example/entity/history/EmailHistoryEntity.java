@@ -4,6 +4,7 @@ import jakarta.persistence.*;
 import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
+import org.example.enums.EmailHistoryStatus;
 
 import java.time.LocalDateTime;
 
@@ -18,12 +19,13 @@ public class EmailHistoryEntity {
     @Column(name = "message", columnDefinition = "text")
     private String message;
 
-    @Column(name = "email",unique = true)
+    @Column(name = "email")
     private String email;
 
     @Column(name = "created_date")
     private LocalDateTime createdDate = LocalDateTime.now();
 
-    @Column(name = "visible")
-    private Boolean visible;
+    @Enumerated(EnumType.STRING)
+    @Column(name = "status")
+    private EmailHistoryStatus status;
 }

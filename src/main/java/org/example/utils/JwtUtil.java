@@ -8,10 +8,10 @@ import javax.crypto.spec.SecretKeySpec;
 import java.util.Date;
 
 public class JwtUtil {
-    private static final int tokenLiveTime = 1000 * 3600 * 96; // 2-day
+    private static final int tokenLiveTime = 1000 * 3600 * 96; // 4-day
     private static final String secretKey = "very_long_mazgiskjdh2skjdhadasdasg7fgdfgdfdftrhdgrgefergetdgsfegvergdgsbdzsfbvgdsetbgrFLKWRMF.KJERNGVSFUOISN;IUVNSDBFIUSH;IULFHWA;UOIESIU;OF;IOEJ'OIGJMKLDFMGghjgjOTFIJBP";
 
-    public static String encode(Long profileId,String username, ProfileRole role) {
+    public static String encode(Integer profileId,String username, ProfileRole role) {
         JwtBuilder jwtBuilder = Jwts.builder();
         jwtBuilder.issuedAt(new Date());
 
@@ -25,7 +25,7 @@ public class JwtUtil {
         jwtBuilder.claim("username", username);
 
         jwtBuilder.expiration(new Date(System.currentTimeMillis() + (tokenLiveTime)));
-        jwtBuilder.issuer("KunUzTest");
+        jwtBuilder.issuer("Youtube");
         return jwtBuilder.compact();
     }
 
@@ -39,7 +39,7 @@ public class JwtUtil {
         Jws<Claims> jws = jwtParser.parseSignedClaims(token);
         Claims claims = jws.getPayload();
 
-        Long id = (Long) claims.get("id");
+        Integer id = (Integer) claims.get("id");
         String username = (String) claims.get("username");
         String role = (String) claims.get("role");
         if (role != null) {
@@ -48,10 +48,10 @@ public class JwtUtil {
         }
         return new JwtDTO(id);
     }
+
     public static JwtDTO getJwtDTO(String authorization) {
         String[] str = authorization.split(" ");
         String jwt = str[1];
         return JwtUtil.decode(jwt);
     }
-
 }

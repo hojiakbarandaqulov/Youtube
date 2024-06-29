@@ -14,6 +14,7 @@ import org.example.repository.EmailHistoryRepository;
 import org.example.repository.ProfileRepository;
 import org.example.service.history.EmailHistoryService;
 import org.example.utils.JwtUtil;
+import org.example.utils.MD5Util;
 import org.example.utils.RandomUtil;
 import org.springframework.stereotype.Service;
 

@@ -8,6 +8,7 @@ import org.example.service.ProfileService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -19,7 +20,7 @@ import org.springframework.web.bind.annotation.*;
 public class ProfileController {
     @Autowired
     private ProfileService profileService;
-    @PreAuthorize("hasRole('ADMIN')")
+    @PreAuthorize("hasRole('ROLE_ADMIN')")
     @PostMapping(value = "/adm/create") //ADMIN
     public ResponseEntity<ProfileDTO> create(@Valid @RequestBody ProfileCreateDTO dto) {
         ProfileDTO response = profileService.create(dto);

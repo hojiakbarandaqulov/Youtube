@@ -59,6 +59,7 @@ public class SecurityConfig {
                     .requestMatchers("/auth/login").permitAll()
                     .requestMatchers("/auth/registration").permitAll()
                     .requestMatchers("/tag/any/**").permitAll()
+                    .requestMatchers("attach/**").permitAll()
                     .anyRequest()
                     .authenticated();
         });

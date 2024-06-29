@@ -1,0 +1,24 @@
+### create
+POST http://localhost:8080/attach/upload
+Content-Type: multipart/form-data; boundary=WebAppBoundary
+
+--WebAppBoundary
+Content-Disposition: form-data; name="file"; filename="file.webp"
+
+< C:\file.webp
+
+### open
+GET localhost:8080/attach/open/93219451-1162-45be-88ec-34479bb34627
+
+
+### download
+GET http://localhost:8080/attach/download/93219451-1162-45be-88ec-34479bb34627
+
+
+###
+GET http://localhost:8080/attach/pagination?page=1&size=2
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJpYXQiOjE3MTk1NzAxMjEsImlkIjoxLCJyb2xlIjoiUk9MRV9BRE1JTiIsInVzZXJuYW1lIjoiaG9qaWFrYmFyYW5kYXVsb3Y1QGdtYWlsLmNvbSIsImV4cCI6MTcxOTkxNTcyMSwiaXNzIjoiWW91dHViZSJ9.3wExnDIsVifqdqOpIuyg6JVGilvlt5YV5lXiMY6hGGEyHgSedU_OzB0ByyHx0KaWznFWYc3okLwWiXJQRd5vZQ
+
+###
+DELETE http://localhost:8080/attach/delete/
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJpYXQiOjE3MTk1NzAxMjEsImlkIjoxLCJyb2xlIjoiUk9MRV9BRE1JTiIsInVzZXJuYW1lIjoiaG9qaWFrYmFyYW5kYXVsb3Y1QGdtYWlsLmNvbSIsImV4cCI6MTcxOTkxNTcyMSwiaXNzIjoiWW91dHViZSJ9.3wExnDIsVifqdqOpIuyg6JVGilvlt5YV5lXiMY6hGGEyHgSedU_OzB0ByyHx0KaWznFWYc3okLwWiXJQRd5vZQ

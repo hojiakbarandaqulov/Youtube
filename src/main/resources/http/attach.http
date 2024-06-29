@@ -1,0 +1,26 @@
+POST http://localhost:8080/attach/upload
+Content-Type: multipart/form-data; boundary=WebAppBoundary
+
+--WebAppBoundary
+Content-Disposition: form-data; name="file"; filename="messi.jpg"
+
+< D:\messi.jpg
+
+
+### open
+GET http://localhost:8080/attach/open/82fc965a-84a2-4b19-a7b7-8fef9e9724fb.jpg
+
+
+### download
+GET http://localhost:8080/attach/download/82fc965a-84a2-4b19-a7b7-8fef9e9724fb.jpg
+
+
+
+### pagination
+GET http://localhost:8080/attach/pagination?page=1&size=2
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJpYXQiOjE3MTk1NzAxMjEsImlkIjoxLCJyb2xlIjoiUk9MRV9BRE1JTiIsInVzZXJuYW1lIjoiaG9qaWFrYmFyYW5kYXVsb3Y1QGdtYWlsLmNvbSIsImV4cCI6MTcxOTkxNTcyMSwiaXNzIjoiWW91dHViZSJ9.3wExnDIsVifqdqOpIuyg6JVGilvlt5YV5lXiMY6hGGEyHgSedU_OzB0ByyHx0KaWznFWYc3okLwWiXJQRd5vZQ
+
+### delete
+DELETE http://localhost:8080/attach/delete/d561009f-b190-4ff1-b052-8e779c7d3c63.jpg
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJpYXQiOjE3MTk1NzAxMjEsImlkIjoxLCJyb2xlIjoiUk9MRV9BRE1JTiIsInVzZXJuYW1lIjoiaG9qaWFrYmFyYW5kYXVsb3Y1QGdtYWlsLmNvbSIsImV4cCI6MTcxOTkxNTcyMSwiaXNzIjoiWW91dHViZSJ9.3wExnDIsVifqdqOpIuyg6JVGilvlt5YV5lXiMY6hGGEyHgSedU_OzB0ByyHx0KaWznFWYc3okLwWiXJQRd5vZQ
+

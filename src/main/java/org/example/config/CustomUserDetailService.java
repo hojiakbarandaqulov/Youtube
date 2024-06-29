@@ -1,8 +1,6 @@
 package org.example.config;
 
-import org.example.entity.ProfileEntity;
-import org.example.repository.ProfileRepository;
-import org.example.entity.ProfileEntity;
+import org.example.entity.profile.ProfileEntity;
 import org.example.repository.ProfileRepository;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;

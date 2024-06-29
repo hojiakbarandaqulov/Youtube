@@ -42,7 +42,7 @@ public class AuthorizationController {
     }
 
     @GetMapping("/verification/{userId}")
-    public ResponseEntity<String> verification(@PathVariable("userId") Long userId) {
+    public ResponseEntity<String> verification(@PathVariable("userId") Integer userId) {
         String body = authorizationService.authorizationVerification(userId);
         return ResponseEntity.ok().body(body);
     }

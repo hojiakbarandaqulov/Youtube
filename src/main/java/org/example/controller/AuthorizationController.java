@@ -27,7 +27,6 @@ public class AuthorizationController {
         this.authorizationService = authorizationService;
     }
 
-    @PreAuthorize("hasRole('USER')")
     @PostMapping("/registration")
     @Operation(summary = "Registration", description = "Api for profile registration")
     public ResponseEntity<String> registration(@Valid @RequestBody RegistrationDTO registrationDTO){

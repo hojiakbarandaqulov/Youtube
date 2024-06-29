@@ -1,12 +1,11 @@
 ### Registration
 POST http://localhost:8080/auth/registration
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJpYXQiOjE3MTk1NzA5ODIsImlkIjoyLCJyb2xlIjoiUk9MRV9VU0VSIiwidXNlcm5hbWUiOiJob2ppYWtiYXJAZ21haWwuY29tIiwiZXhwIjoxNzE5OTE2NTgyLCJpc3MiOiJZb3V0dWJlIn0.YjXKWNUSKnIviNp1PCm9RaMv3sXqUgSLp4-e9GDPlPAsOkU9hXqFf-mZT0nA6QeR1CAaVu2Cm0c-r84VrHRCmA
 
 {
   "name": "Eshmat",
   "surname": "Eshmatov",
-  "email": "codeuz91@gmail.com",
+  "email": "codeuz12345@gmail.com",
   "password": "1234"
 }
 
@@ -16,7 +15,7 @@ POST http://localhost:8080/auth/login
 Content-Type: application/json
 
 {
-  "email": "hojiakbar@gmail.com",
+  "email": "hojiakbarandaulov5@gmail.com",
   "password": "1234"
 }
 

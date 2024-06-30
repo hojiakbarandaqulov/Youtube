@@ -1,10 +1,8 @@
 package org.example.config;
 
-import org.example.entity.ProfileEntity;
+import org.example.entity.profile.ProfileEntity;
 import org.example.enums.ProfileStatus;
 import lombok.Getter;
-import org.example.entity.ProfileEntity;
-import org.example.enums.ProfileStatus;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -21,6 +19,7 @@ public class CustomUserDetail implements UserDetails {
     public CustomUserDetail(ProfileEntity profile) {
         this.profile = profile;
     }
+
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {

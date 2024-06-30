@@ -4,8 +4,8 @@ import lombok.extern.slf4j.Slf4j;
 import org.example.dto.AuthorizationResponseDTO;
 import org.example.dto.LoginDTO;
 import org.example.dto.RegistrationDTO;
-import org.example.entity.ProfileEntity;
 import org.example.entity.history.EmailHistoryEntity;
+import org.example.entity.profile.ProfileEntity;
 import org.example.enums.EmailHistoryStatus;
 import org.example.enums.ProfileRole;
 import org.example.enums.ProfileStatus;
@@ -18,7 +18,6 @@ import org.example.utils.MD5Util;
 import org.example.utils.RandomUtil;
 import org.springframework.stereotype.Service;
 
-import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.Optional;
 
@@ -58,7 +57,7 @@ public class AuthorizationService {
         return "To complete your registration please verify your phone.";
     }
 
-    public String authorizationVerification(Long userId) {
+    public String authorizationVerification(Integer userId) {
         Optional<ProfileEntity> optional = profileRepository.findById(userId);
         if (optional.isEmpty()) {
             throw new AppBadException("User not found");
@@ -108,12 +107,6 @@ public class AuthorizationService {
         emailHistoryService.isNotExpiredEmail(entity.getEmail()); // check for expireation date
         if (!entity.getVisible() || !entity.getStatus().equals(ProfileStatus.REGISTRATION)) {
             throw new AppBadException("Registration not completed");
-        }
-
-        Optional<EmailHistoryEntity> byEmail = emailHistoryRepository.findByEmail(email);
-        EmailHistoryEntity emailHistory=byEmail.get();
-        if (!emailHistory.getStatus().equals(EmailHistoryStatus.SENT)){
-            throw new AppBadException("Email already exists");
         }
         emailHistoryService.checkEmailLimit(email);
         sendRegistrationRandomCodeEmail(entity.getId(), email);

@@ -1,8 +1,10 @@
 package org.example.controller;
 
-import org.example.dto.attach.AttachDTO;
+import org.example.dto.AttachDTO;
 import org.example.service.AttachService;
 import org.springframework.data.domain.PageImpl;
+import org.springframework.http.HttpEntity;
+import org.springframework.http.HttpHeaders;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
@@ -26,25 +28,26 @@ public class AttachController {
 
     @GetMapping(value = "/open/{fileName}", produces = MediaType.IMAGE_PNG_VALUE)
     public byte[] open(@PathVariable("fileName") String fileName) {
-        return this.attachService.load(fileName);
+        return attachService.loadImage(fileName);
     }
+
 
     @GetMapping("/download/{fileName}")
     public ResponseEntity download(@PathVariable("fileName") String fileName) {
         return attachService.download(fileName);
+
     }
 
     @PreAuthorize("hasRole('ADMIN')")
-    @GetMapping("/pagination")
+    @GetMapping(value = "/pagination")
     public ResponseEntity<PageImpl<AttachDTO>> pagination(@RequestParam(value = "page", defaultValue = "1") Integer page,
-                                                          @RequestParam(value = "size", defaultValue = "10") Integer size
-                                                          ){
-        PageImpl<AttachDTO>response=attachService.getAttachPagination(page-1,size);
+                                                          @RequestParam(value = "size", defaultValue = "10") Integer size) {
+        PageImpl<AttachDTO> response = attachService.getAttachPagination(page - 1, size);
         return ResponseEntity.ok().body(response);
     }
 
     @PreAuthorize("hasRole('ADMIN')")
-    @DeleteMapping("delete/{id}")
+    @DeleteMapping("/delete/{id}")
     public ResponseEntity<Boolean> delete(@PathVariable("id") String id) {
         Boolean delete = attachService.delete(id);
         return ResponseEntity.ok().body(delete);

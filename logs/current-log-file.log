@@ -2032,3 +2032,34 @@ Caused by: org.postgresql.util.PSQLException: ERROR: identity column type must b
 30 Jun 2024 - 21:49:09.204 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
 30 Jun 2024 - 21:49:09.206 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
 30 Jun 2024 - 21:49:09.211 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+30 Jun 2024 - 21:49:14.306 [main] INFO  org.example.YoutubeApplication - Starting YoutubeApplication using Java 21.0.2 with PID 16044 (D:\Code_uz\Hojiakbar\JDBC_Spring_Project\Sppring\Youtube\target\classes started by Hp victus in D:\Code_uz\Hojiakbar\JDBC_Spring_Project\Sppring\Youtube)
+30 Jun 2024 - 21:49:14.322 [main] INFO  org.example.YoutubeApplication - The following 1 profile is active: "dev"
+30 Jun 2024 - 21:49:15.322 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+30 Jun 2024 - 21:49:15.406 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 77 ms. Found 4 JPA repository interfaces.
+30 Jun 2024 - 21:49:16.019 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+30 Jun 2024 - 21:49:16.033 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+30 Jun 2024 - 21:49:16.034 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.25]
+30 Jun 2024 - 21:49:16.101 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+30 Jun 2024 - 21:49:16.102 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1726 ms
+30 Jun 2024 - 21:49:16.265 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+30 Jun 2024 - 21:49:16.316 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.5.2.Final
+30 Jun 2024 - 21:49:16.406 [main] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+30 Jun 2024 - 21:49:16.707 [main] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+30 Jun 2024 - 21:49:16.733 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+30 Jun 2024 - 21:49:16.886 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@2c1ea7be
+30 Jun 2024 - 21:49:16.888 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+30 Jun 2024 - 21:49:17.941 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+30 Jun 2024 - 21:49:18.038 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+30 Jun 2024 - 21:49:18.302 [main] INFO  o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+30 Jun 2024 - 21:49:19.249 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+30 Jun 2024 - 21:49:19.316 [main] INFO  o.s.s.c.a.a.c.InitializeAuthenticationProviderBeanManagerConfigurer$InitializeAuthenticationProviderManagerConfigurer - Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
+30 Jun 2024 - 21:49:19.317 [main] WARN  o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used for username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider.
+30 Jun 2024 - 21:49:20.196 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
+30 Jun 2024 - 21:49:20.208 [main] INFO  org.example.YoutubeApplication - Started YoutubeApplication in 6.306 seconds (process running for 6.954)
+30 Jun 2024 - 21:49:20.395 [main] INFO  org.flywaydb.core.FlywayExecutor - Database: jdbc:postgresql://localhost:5432/Youtube (PostgreSQL 14.11)
+30 Jun 2024 - 21:49:20.474 [main] INFO  o.f.core.internal.command.DbValidate - Successfully validated 2 migrations (execution time 00:00.032s)
+30 Jun 2024 - 21:49:20.487 [main] INFO  o.f.core.internal.command.DbMigrate - Current version of schema "public": 2
+30 Jun 2024 - 21:49:20.491 [main] INFO  o.f.core.internal.command.DbMigrate - Schema "public" is up to date. No migration necessary.
+30 Jun 2024 - 21:49:31.972 [http-nio-8080-exec-2] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+30 Jun 2024 - 21:49:31.972 [http-nio-8080-exec-2] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+30 Jun 2024 - 21:49:31.974 [http-nio-8080-exec-2] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 2 ms

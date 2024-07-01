@@ -2,7 +2,7 @@ package org.example.utils;
 
 
 import org.example.config.CustomUserDetail;
-import org.example.dto.JwtDTO;
+import org.example.dto.auth.JwtDTO;
 import org.example.entity.profile.ProfileEntity;
 import org.example.enums.ProfileRole;
 import org.example.exp.AppForbiddenException;

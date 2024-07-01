@@ -3,16 +3,11 @@ package org.example.controller.history;
 import org.example.dto.history.EmailDTO;
 import org.example.dto.history.EmailFilterDTO;
 import org.example.service.AuthorizationService;
-import org.example.service.history.EmailHistoryService;
+import org.example.service.EmailHistoryService;
 import jakarta.validation.Valid;
-import org.example.dto.history.EmailDTO;
-import org.example.service.AuthorizationService;
-import org.example.service.history.EmailHistoryService;
 import org.springframework.data.domain.PageImpl;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-
-import java.time.LocalDateTime;
 
 @RestController
 @RequestMapping("/email")

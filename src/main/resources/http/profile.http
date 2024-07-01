@@ -19,3 +19,8 @@ Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJpYXQiOjE3MTk2Njg3NzYsImlkIjoxMiwic
   "oldPassword": "12345",
   "newPassword": "54321"
 }
+
+### change email
+PUT http://localhost:8080/profile/change/email?newEmail=qodirovako1@gmail.com
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJpYXQiOjE3MTk2Njg3NzYsImlkIjoxMiwicm9sZSI6IlJPTEVfVVNFUiIsInVzZXJuYW1lIjoiYWtvYmlycW9kaXJpeUBnbWFpbC5jb20iLCJleHAiOjE3MjAwMTQzNzYsImlzcyI6IllvdXR1YmUifQ._-jbH4IZfy3GjQqe7nlJtuo0OT1UEf7-fJbIAueRQUAsMjJaJJsHNhU0c-s8qS5o1T7fliQxsMRO4g4MUVcF4g

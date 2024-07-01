@@ -1,4 +1,4 @@
-package org.example.service.history;
+package org.example.service;
 
 import org.example.dto.history.EmailDTO;
 import org.example.dto.history.EmailFilterDTO;
@@ -88,5 +88,12 @@ public class EmailHistoryService {
     public PageImpl<EmailDTO> filter(EmailFilterDTO filterDTO, int page, int size) {
 
         return null;
+    }
+
+    public void save(String email, String message) {
+        EmailHistoryEntity entity = new EmailHistoryEntity();
+        entity.setEmail(email);
+        entity.setMessage(message);
+        emailHistoryRepository.save(entity);
     }
 }

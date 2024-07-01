@@ -9,8 +9,8 @@ import lombok.Setter;
 @Setter
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class ProfileChangePasswordDTO {
-
+    @Size(min = 4, message = "password uzunligi 4 dan kichik ")
     private String oldPassword;
-    @Size(min = 4)
+    @Size(min = 4, message = "password uzunligi 4 dan kichik ")
     private String newPassword;
 }

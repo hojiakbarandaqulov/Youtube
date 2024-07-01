@@ -1,7 +1,7 @@
 package org.example.utils;
 
 import io.jsonwebtoken.*;
-import org.example.dto.JwtDTO;
+import org.example.dto.auth.JwtDTO;
 import org.example.enums.ProfileRole;
 
 import javax.crypto.spec.SecretKeySpec;
@@ -53,5 +53,21 @@ public class JwtUtil {
         String[] str = authorization.split(" ");
         String jwt = str[1];
         return JwtUtil.decode(jwt);
+    }
+
+    public static String generateToken(Long profileId, String username, ProfileRole role) {
+        SignatureAlgorithm signatureAlgorithm = SignatureAlgorithm.HS512;
+        SecretKeySpec secretKeySpec = new SecretKeySpec(secretKey.getBytes(), signatureAlgorithm.getJcaName());
+
+        String token = Jwts.builder()
+                .issuedAt(new Date())
+                .signWith(secretKeySpec)
+                .claim("id", profileId)
+                .claim("username", username)
+                .claim("role", role)
+                .expiration(new Date(System.currentTimeMillis() + tokenLiveTime))
+                .issuer("KunUz")
+                .compact();
+        return token;
     }
 }

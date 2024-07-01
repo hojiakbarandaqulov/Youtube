@@ -1,9 +1,9 @@
 package org.example.service;
 
 import lombok.extern.slf4j.Slf4j;
-import org.example.dto.AuthorizationResponseDTO;
-import org.example.dto.LoginDTO;
-import org.example.dto.RegistrationDTO;
+import org.example.dto.auth.AuthorizationResponseDTO;
+import org.example.dto.auth.LoginDTO;
+import org.example.dto.auth.RegistrationDTO;
 import org.example.entity.profile.ProfileEntity;
 import org.example.entity.history.EmailHistoryEntity;
 import org.example.enums.EmailHistoryStatus;
@@ -12,13 +12,11 @@ import org.example.enums.ProfileStatus;
 import org.example.exp.AppBadException;
 import org.example.repository.EmailHistoryRepository;
 import org.example.repository.ProfileRepository;
-import org.example.service.history.EmailHistoryService;
 import org.example.utils.JwtUtil;
 import org.example.utils.MD5Util;
 import org.example.utils.RandomUtil;
 import org.springframework.stereotype.Service;
 
-import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.Optional;
 

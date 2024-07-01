@@ -17,9 +17,10 @@ public class ProfileDTO {
     private String surname;
     private String email;
     private String password;
-    private Integer photoId;
+    private Integer photo;
+    private LocalDateTime createdDate=LocalDateTime.now();
     private ProfileRole role;
+    private String jwt;
     private ProfileStatus status;
-    private Boolean visible;
-    private LocalDateTime createdDate;
+    private Boolean visible=Boolean.TRUE;
 }

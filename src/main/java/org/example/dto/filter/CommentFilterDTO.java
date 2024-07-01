@@ -1,8 +1,8 @@
 package org.example.dto.filter;
 
+import org.example.entity.profile.ProfileEntity;
 import lombok.Getter;
 import lombok.Setter;
-import org.example.entity.profile.ProfileEntity;
 
 import java.time.LocalDateTime;
 @Getter

@@ -46,6 +46,7 @@ public class EmailHistoryService {
 
         LocalDateTime to = LocalDateTime.now();
         LocalDateTime from = to.minusMinutes(2);
+
         long count = emailHistoryRepository.countByEmailAndCreatedDateBetween(email, from, to);
         if (count >= 3) {
             throw new AppBadException("Sms limit reached. Please try after some time");

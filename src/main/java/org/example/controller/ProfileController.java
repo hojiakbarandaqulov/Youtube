@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.*;
 @RestController
 @RequestMapping("/profile")
 public class ProfileController {
-   /* @Autowired
+    @Autowired
     private ProfileService profileService;
     @PreAuthorize("hasRole('ROLE_ADMIN')")
     @PostMapping(value = "/adm/create") //ADMIN
@@ -26,5 +26,5 @@ public class ProfileController {
     public ResponseEntity<Boolean> changePassword(@Valid @RequestBody ProfileChangePasswordDTO dto){
         profileService.changePassword(dto);
         return ResponseEntity.ok().body(true);
-    }*/
+    }
 }

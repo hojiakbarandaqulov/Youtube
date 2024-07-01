@@ -20,7 +20,6 @@ public class CustomUserDetail implements UserDetails {
         this.profile = profile;
     }
 
-
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
         List<SimpleGrantedAuthority> roleList = new LinkedList<>();

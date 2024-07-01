@@ -25,6 +25,7 @@ public class CustomUserDetailService implements UserDetailsService {
             throw new UsernameNotFoundException("User not found");
         }
         ProfileEntity employee = optional.get();
+        System.out.println("aa");
         return new CustomUserDetail(employee);
     }
 }

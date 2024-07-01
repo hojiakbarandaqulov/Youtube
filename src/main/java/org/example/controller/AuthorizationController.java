@@ -35,18 +35,21 @@ public class AuthorizationController {
     @PostMapping("/login")
     public ResponseEntity<AuthorizationResponseDTO> login(@Valid @RequestBody LoginDTO loginDTO){
         AuthorizationResponseDTO login = authorizationService.login(loginDTO);
+        log .info("Login email = {} password = {}",loginDTO.getEmail(), loginDTO.getPassword());
         return ResponseEntity.ok().body(login);
     }
 
     @GetMapping("/verification/{userId}")
-    public ResponseEntity<String> verification(@PathVariable("userId") Long userId) {
+    public ResponseEntity<String> verification(@PathVariable("userId") Integer userId) {
         String body = authorizationService.authorizationVerification(userId);
+        log.info("verification userId = {} email = {}",userId,body);
         return ResponseEntity.ok().body(body);
     }
 
     @GetMapping("/registration/resend/{email}")
     public ResponseEntity<String> registrationResend(@PathVariable("email") String email) {
         String body = authorizationService.registrationResendEmail(email);
+        log.info("registration userId = {} email = {}",email,body);
         return ResponseEntity.ok().body(body);
     }
 

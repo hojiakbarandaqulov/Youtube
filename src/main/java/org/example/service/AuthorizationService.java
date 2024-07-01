@@ -57,7 +57,7 @@ public class AuthorizationService {
         return "To complete your registration please verify your phone.";
     }
 
-    public String authorizationVerification(Long userId) {
+    public String authorizationVerification(Integer userId) {
         Optional<ProfileEntity> optional = profileRepository.findById(userId);
         if (optional.isEmpty()) {
             throw new AppBadException("User not found");

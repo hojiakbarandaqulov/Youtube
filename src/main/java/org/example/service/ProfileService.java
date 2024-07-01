@@ -25,7 +25,7 @@ public class ProfileService {
             return toDTO(save);
     }
 
-    public ProfileEntity get(Long id) {
+    public ProfileEntity get(Integer id) {
         return profileRepository.findById(id).orElseThrow(() -> {
             logger.error("Profile not found id = {}", id);
             throw new AppBadException("Profile not found");
@@ -56,7 +56,7 @@ public class ProfileService {
 
     public Boolean changePassword(ProfileChangePasswordDTO dto) {
         Integer profileId = SecurityUtil.getProfileId();
-        ProfileEntity entity= get(Long.valueOf(profileId));
+        ProfileEntity entity= get(profileId);
         if (!entity.getPassword().equals(MD5Util.getMD5(entity.getPassword()))){
            throw new AppBadException("Old password wrong");
         }

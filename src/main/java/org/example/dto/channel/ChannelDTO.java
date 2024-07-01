@@ -12,8 +12,9 @@ import org.example.enums.ChannelStatus;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class ChannelDTO {
     private String name;
-    private AttachEntity photo;
+    private String photo;
     private String description;
     private ChannelStatus status;
-    private AttachEntity banner;
+    private String banner;
+    private Integer profileId;
 }

@@ -4,7 +4,7 @@ Content-Type: application/json
 Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJpYXQiOjE3MTk4NTc0MjYsImlkIjoyLCJyb2xlIjoiUk9MRV9VU0VSIiwidXNlcm5hbWUiOiJob2ppYWtiYXJAZ21haWwuY29tIiwiZXhwIjoxNzIwMjAzMDI2LCJpc3MiOiJZb3V0dWJlIn0.Ihc_31MCHE-6w269tg-akLcrKdiJ0VzucfrAlhPHEcVxw6tQsaR4RqEOlpysxvm4VzMJBovnZO_oJUaO0gyhCQ
 
 {
-  "name": "Kiyimlar.uz",
+  "name": "Test.uz",
   "photo": "f4a8a1db-4c8d-4888-80fc-aad82e0e06f1.jpg",
   "description": "zor kanal",
   "status": "ACTIVE",

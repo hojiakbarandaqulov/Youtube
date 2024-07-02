@@ -26,7 +26,6 @@ public class ChannelController {
         return ResponseEntity.ok().body(channel);
     }
 
-
     @PreAuthorize("hasRole('USER')")
     @PutMapping("/update/{id}")
     public ResponseEntity<Boolean> updateChannel(@RequestBody ChannelDTO channelDTO,
@@ -86,5 +85,4 @@ public class ChannelController {
         ChannelDTO channel = channelService.getBuUserChannelList(channelId,profileId);
         return ResponseEntity.ok().body(channel);
     }
-
 }

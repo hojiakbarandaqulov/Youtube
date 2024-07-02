@@ -4,6 +4,7 @@ import org.example.dto.history.EmailDTO;
 import org.example.dto.history.EmailFilterDTO;
 import org.example.entity.history.EmailHistoryEntity;
 import org.example.enums.EmailHistoryStatus;
+import org.example.enums.LanguageEnum;
 import org.example.exp.AppBadException;
 import org.example.repository.EmailHistoryRepository;
 import org.example.entity.history.EmailHistoryEntity;
@@ -28,7 +29,7 @@ public class EmailHistoryService {
     public void crete(String toEmail, String text) {
         EmailHistoryEntity entity = new EmailHistoryEntity();
         if (toEmail.equals(entity.getEmail())) {
-            throw new AppBadException("Email is already in use");
+            throw new AppBadException("EmailHistory already exists");
         }
         entity.setEmail(toEmail);
         entity.setMessage(text);
@@ -54,7 +55,7 @@ public class EmailHistoryService {
     }
 
     public void isNotExpiredEmail(String email) {
-        Optional<EmailHistoryEntity> optional = emailHistoryRepository.findByEmail(email);
+        Optional<EmailHistoryEntity> optional = emailHistoryRepository.findTopByEmailOrderByCreatedDateDesc(email);
         if (optional.isEmpty()) {
             throw new AppBadException("Email history not found");
         }

@@ -15,7 +15,6 @@ import org.springframework.web.bind.annotation.*;
 public class ProfileController {
     @Autowired
     private ProfileService profileService;
-
     @PreAuthorize("hasRole('ROLE_ADMIN')")
     @PostMapping(value = "/adm/create") //ADMIN
     public ResponseEntity<ProfileDTO> create(@Valid @RequestBody ProfileCreateDTO dto) {

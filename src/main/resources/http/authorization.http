@@ -1,11 +1,12 @@
 ### Registration
 POST http://localhost:8080/auth/registration
 Content-Type: application/json
+Accept-Language:EN
 
 {
   "name": "Eshmat",
   "surname": "Eshmatov",
-  "email": "codeuz12345@gmail.com",
+  "email": "codeuz91@gmail.com",
   "password": "1234"
 }
 
@@ -21,10 +22,10 @@ Content-Type: application/json
 
 
 ### Verification
-GET http://localhost:8080/auth/verification/2
-#Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJpYXQiOjE3MTk1NzAxMjEsImlkIjoxLCJyb2xlIjoiUk9MRV9BRE1JTiIsInVzZXJuYW1lIjoiaG9qaWFrYmFyYW5kYXVsb3Y1QGdtYWlsLmNvbSIsImV4cCI6MTcxOTkxNTcyMSwiaXNzIjoiWW91dHViZSJ9.3wExnDIsVifqdqOpIuyg6JVGilvlt5YV5lXiMY6hGGEyHgSedU_OzB0ByyHx0KaWznFWYc3okLwWiXJQRd5vZQ
+GET http://localhost:8080/auth/verification/18
+Accept-Language: EN
 
 
 ###  registration resend
 GET http://localhost:8080/auth/registration/resend/codeuz91@gmail.com
-Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJpYXQiOjE3MTk1NzAxMjEsImlkIjoxLCJyb2xlIjoiUk9MRV9BRE1JTiIsInVzZXJuYW1lIjoiaG9qaWFrYmFyYW5kYXVsb3Y1QGdtYWlsLmNvbSIsImV4cCI6MTcxOTkxNTcyMSwiaXNzIjoiWW91dHViZSJ9.3wExnDIsVifqdqOpIuyg6JVGilvlt5YV5lXiMY6hGGEyHgSedU_OzB0ByyHx0KaWznFWYc3okLwWiXJQRd5vZQ
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJpYXQiOjE3MjAwMTkwNDgsImlkIjoyLCJyb2xlIjoiUk9MRV9VU0VSIiwidXNlcm5hbWUiOiJob2ppYWtiYXJAZ21haWwuY29tIiwiZXhwIjoxNzIwMzY0NjQ4LCJpc3MiOiJZb3V0dWJlIn0.uHdPxJFFyRtzuTo71LKUG7zq0BCidAIP8jBueE6CVySdPcTov5i7gkXJEnDzKhLTxiujjpWBfoSZ_w6I0cLmdA

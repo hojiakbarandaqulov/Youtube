@@ -1,0 +1,68 @@
+### create
+POST http://localhost:8080/channel/create
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJpYXQiOjE3MTk4NTc0MjYsImlkIjoyLCJyb2xlIjoiUk9MRV9VU0VSIiwidXNlcm5hbWUiOiJob2ppYWtiYXJAZ21haWwuY29tIiwiZXhwIjoxNzIwMjAzMDI2LCJpc3MiOiJZb3V0dWJlIn0.Ihc_31MCHE-6w269tg-akLcrKdiJ0VzucfrAlhPHEcVxw6tQsaR4RqEOlpysxvm4VzMJBovnZO_oJUaO0gyhCQ
+
+{
+  "name": "Kiyimlar.uz",
+  "photo": "f4a8a1db-4c8d-4888-80fc-aad82e0e06f1.jpg",
+  "description": "zor kanal",
+  "status": "ACTIVE",
+  "banner": "f4a8a1db-4c8d-4888-80fc-aad82e0e06f1.jpg",
+  "profileId": 2
+}
+
+### update
+PUT http://localhost:8080/channel/update/680c71e3-c3cf-4bcc-8a7f-c49462ed5ed7
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJpYXQiOjE3MTk4NTc0MjYsImlkIjoyLCJyb2xlIjoiUk9MRV9VU0VSIiwidXNlcm5hbWUiOiJob2ppYWtiYXJAZ21haWwuY29tIiwiZXhwIjoxNzIwMjAzMDI2LCJpc3MiOiJZb3V0dWJlIn0.Ihc_31MCHE-6w269tg-akLcrKdiJ0VzucfrAlhPHEcVxw6tQsaR4RqEOlpysxvm4VzMJBovnZO_oJUaO0gyhCQ
+
+{
+"name": "HOJIAKBAR.UZ",
+"photo": "f4a8a1db-4c8d-4888-80fc-aad82e0e06f1.jpg",
+"description": "zor kanal bu",
+"status": "ACTIVE",
+"banner": "f4a8a1db-4c8d-4888-80fc-aad82e0e06f1.jpg",
+"profileId": 2
+}
+
+
+### photo update
+PUT http://localhost:8080/channel/updatePhoto/76f63961-7480-4206-afb4-5ab48fa956ce
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJpYXQiOjE3MTk4NTc0MjYsImlkIjoyLCJyb2xlIjoiUk9MRV9VU0VSIiwidXNlcm5hbWUiOiJob2ppYWtiYXJAZ21haWwuY29tIiwiZXhwIjoxNzIwMjAzMDI2LCJpc3MiOiJZb3V0dWJlIn0.Ihc_31MCHE-6w269tg-akLcrKdiJ0VzucfrAlhPHEcVxw6tQsaR4RqEOlpysxvm4VzMJBovnZO_oJUaO0gyhCQ
+
+
+{
+  "photo": "f4a8a1db-4c8d-4888-80fc-aad82e0e06f1.jpg"
+}
+
+
+### banner update
+PUT http://localhost:8080/channel/updateBanner/680c71e3-c3cf-4bcc-8a7f-c49462ed5ed7
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJpYXQiOjE3MTk4NTc0MjYsImlkIjoyLCJyb2xlIjoiUk9MRV9VU0VSIiwidXNlcm5hbWUiOiJob2ppYWtiYXJAZ21haWwuY29tIiwiZXhwIjoxNzIwMjAzMDI2LCJpc3MiOiJZb3V0dWJlIn0.Ihc_31MCHE-6w269tg-akLcrKdiJ0VzucfrAlhPHEcVxw6tQsaR4RqEOlpysxvm4VzMJBovnZO_oJUaO0gyhCQ
+
+{
+  "banner": "f4a8a1db-4c8d-4888-80fc-aad82e0e06f1.jpg"
+}
+
+
+### pagination
+GET http://localhost:8080/channel/pagination?page=1&size=3
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJpYXQiOjE3MTk5MDI2NTIsImlkIjoxLCJyb2xlIjoiUk9MRV9BRE1JTiIsInVzZXJuYW1lIjoiaG9qaWFrYmFyYW5kYXVsb3Y1QGdtYWlsLmNvbSIsImV4cCI6MTcyMDI0ODI1MiwiaXNzIjoiWW91dHViZSJ9.Odz04gDh0w6RND9SxkOR_U7CMO_mh2WfOYXQIr_KheoXNr8ftROhkkYr7kvsw38uKMVm-_oHWx6xC_9WyReS7Q
+
+### get channelById
+GET http://localhost:8080/channel/getById/a3e0c66a-805e-45d2-ba7b-c548028f19db
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJpYXQiOjE3MTk5MDI2NTIsImlkIjoxLCJyb2xlIjoiUk9MRV9BRE1JTiIsInVzZXJuYW1lIjoiaG9qaWFrYmFyYW5kYXVsb3Y1QGdtYWlsLmNvbSIsImV4cCI6MTcyMDI0ODI1MiwiaXNzIjoiWW91dHViZSJ9.Odz04gDh0w6RND9SxkOR_U7CMO_mh2WfOYXQIr_KheoXNr8ftROhkkYr7kvsw38uKMVm-_oHWx6xC_9WyReS7Q
+
+
+### change status
+PUT http://localhost:8080/channel/changeStatus/c188f84c-ee3a-4f7f-a966-51707d2c6231
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJpYXQiOjE3MTk5MDI2NTIsImlkIjoxLCJyb2xlIjoiUk9MRV9BRE1JTiIsInVzZXJuYW1lIjoiaG9qaWFrYmFyYW5kYXVsb3Y1QGdtYWlsLmNvbSIsImV4cCI6MTcyMDI0ODI1MiwiaXNzIjoiWW91dHViZSJ9.Odz04gDh0w6RND9SxkOR_U7CMO_mh2WfOYXQIr_KheoXNr8ftROhkkYr7kvsw38uKMVm-_oHWx6xC_9WyReS7Q
+
+
+###
+GET http://localhost:8080/channel/getChannelList/2/cbb7ab1c-8dd0-4c13-93ab-b20337afa222
+Content-Type: application/json
+Authorization: Bearer  eyJhbGciOiJIUzUxMiJ9.eyJpYXQiOjE3MTk5MTA3NjYsImlkIjoyLCJyb2xlIjoiUk9MRV9VU0VSIiwidXNlcm5hbWUiOiJob2ppYWtiYXJAZ21haWwuY29tIiwiZXhwIjoxNzIwMjU2MzY2LCJpc3MiOiJZb3V0dWJlIn0.ZLPj8r31tumVq8vOHBsYXdu3eIbKfm-YC9r1WVQcsQOxq_8VexF23pVrKs5TVQwGcWcoy-Og56ZnoocxzVijwQ

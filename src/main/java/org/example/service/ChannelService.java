@@ -7,6 +7,7 @@ import org.example.entity.profile.ProfileEntity;
 import org.example.enums.ChannelStatus;
 import org.example.exp.AppBadException;
 import org.example.repository.ChannelRepository;
+import org.example.utils.SecurityUtil;
 import org.jetbrains.annotations.NotNull;
 import org.springframework.data.domain.*;
 import org.springframework.stereotype.Service;
@@ -35,7 +36,7 @@ public class ChannelService {
         entity.setDescription(channelDTO.getDescription());
         entity.setStatus(ChannelStatus.ACTIVE);
         entity.setBannerId(channelDTO.getBanner());
-        entity.setProfileId(channelDTO.getProfileId());
+        entity.setProfileId(SecurityUtil.getProfileId());
         channelRepository.save(entity);
         return channelToDTO(entity);
     }
@@ -143,5 +144,4 @@ public class ChannelService {
         channelDTO.setProfileId(entity.getProfileId());
         return channelDTO;
     }
-
 }

@@ -29,7 +29,7 @@ public class ChannelController {
     @PreAuthorize("hasRole('USER')")
     @PutMapping("/update/{id}")
     public ResponseEntity<Boolean> updateChannel(@RequestBody ChannelDTO channelDTO,
-                                                    @PathVariable("id") String id) {
+                                                 @PathVariable("id") String id) {
         ChannelDTO channel = channelService.updateChannel(channelDTO, id);
         log.info("channel update: {}", channel);
         return ResponseEntity.ok().body(true);

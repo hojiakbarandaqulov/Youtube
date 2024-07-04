@@ -37,7 +37,6 @@ public class AttachController {
     @GetMapping("/download/{fileName}")
     public ResponseEntity download(@PathVariable("fileName") String fileName) {
         return attachService.download(fileName);
-
     }
 
     @PreAuthorize("hasRole('ADMIN')")

@@ -1,6 +1,7 @@
 package org.example.service;
 
 
+import org.example.dto.category.CategoryCreateResponseDTO;
 import org.example.dto.category.CategoryDTO;
 import org.example.entity.category.CategoryEntity;
 import org.example.exp.AppBadException;
@@ -19,7 +20,7 @@ public class CategoryService {
     @Autowired
     private CategoryRepository categoryRepository;
 
-    public CategoryDTO create(CategoryDTO category) {
+    public CategoryCreateResponseDTO create(CategoryDTO category) {
         CategoryEntity categoryEntity = new CategoryEntity();
         Optional<CategoryEntity> exists = categoryRepository.findByName(category.getName());
         if (exists.isPresent()) {
@@ -27,7 +28,7 @@ public class CategoryService {
         }
         categoryEntity.setName(category.getName());
         categoryRepository.save(categoryEntity);
-        CategoryDTO categoryDto = new CategoryDTO();
+        CategoryCreateResponseDTO categoryDto = new CategoryCreateResponseDTO();
         categoryDto.setId(categoryEntity.getId());
         categoryDto.setCreatedDate(categoryEntity.getCreatedDate());
         categoryDto.setName(categoryEntity.getName());
@@ -54,11 +55,11 @@ public class CategoryService {
         return true;
     }
 
-    public List<CategoryDTO> getList() {
+    public List<CategoryCreateResponseDTO> getList() {
         Iterable<CategoryEntity> categoryEntities = categoryRepository.findAll();
-        List<CategoryDTO> list = new LinkedList<>();
+        List<CategoryCreateResponseDTO> list = new LinkedList<>();
         for (CategoryEntity categoryEntity : categoryEntities) {
-            CategoryDTO categoryDto = new CategoryDTO();
+            CategoryCreateResponseDTO categoryDto = new CategoryCreateResponseDTO();
             categoryDto.setId(categoryEntity.getId());
             categoryDto.setName(categoryEntity.getName());
             categoryDto.setCreatedDate(categoryEntity.getCreatedDate());

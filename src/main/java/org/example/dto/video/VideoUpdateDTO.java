@@ -1,22 +1,16 @@
 package org.example.dto.video;
 
-import jakarta.mail.search.SearchTerm;
 import jakarta.validation.constraints.NotBlank;
 import lombok.Data;
 import org.example.enums.VideoStatus;
 import org.example.enums.VideoType;
 
-import java.time.LocalDateTime;
-
 @Data
-public class VideoDTO {
+public class VideoUpdateDTO {
     @NotBlank(message = "title required")
     private String title;
     @NotBlank(message = "description required")
     private String description;
-    @NotBlank(message = "channelId required")
-    private String channelId;
-    @NotBlank(message = "type required")
     private VideoType type;
     @NotBlank(message = "status required")
     private VideoStatus status;

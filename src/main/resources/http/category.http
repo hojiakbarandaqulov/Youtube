@@ -1,0 +1,8 @@
+###
+POST http://localhost:8080/category/admin/create
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJpYXQiOjE3MjAwODQ3NDMsImlkIjoxLCJyb2xlIjoiUk9MRV9BRE1JTiIsInVzZXJuYW1lIjoiaG9qaWFrYmFyYW5kYXVsb3Y1QGdtYWlsLmNvbSIsImV4cCI6MTcyMDQzMDM0MywiaXNzIjoiWW91dHViZSJ9.Lf_b-V0DssDU0hKOjz5PX1o6ExGegC89PJ7xGEMKswsY6EYO3n8gVXOHB31MkjHmRWIt1k0tg5dswkIgYkMmmA
+
+{
+  "name": "Java"
+}

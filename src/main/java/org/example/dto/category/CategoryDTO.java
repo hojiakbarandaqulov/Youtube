@@ -7,11 +7,8 @@ import java.time.LocalDateTime;
 
 @Data
 public class CategoryDTO {
-    private Integer id ;
 
     @NotBlank(message = "category name is required")
     private String name ;
-
-    private LocalDateTime createdDate;
 
 }

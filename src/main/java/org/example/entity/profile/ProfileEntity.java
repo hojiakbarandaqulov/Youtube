@@ -43,4 +43,7 @@ public class ProfileEntity {
 
     @Column(name = "visible")
     private Boolean visible=Boolean.TRUE;
+
+    @Column(name = "photo_id")
+    private String photoId;
 }

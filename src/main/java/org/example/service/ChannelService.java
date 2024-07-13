@@ -32,7 +32,7 @@ public class ChannelService {
         }
         ChannelEntity entity=new ChannelEntity();
         entity.setName(channelDTO.getName());
-        entity.setPhotoId(channelDTO.getPhoto());
+        entity.setPhotoId(channelDTO.getPhotoId());
         entity.setDescription(channelDTO.getDescription());
         entity.setStatus(ChannelStatus.ACTIVE);
         entity.setBannerId(channelDTO.getBanner());
@@ -44,7 +44,7 @@ public class ChannelService {
     public ChannelDTO channelToDTO(ChannelEntity channelEntity) {
         ChannelDTO newChannelDTO=new ChannelDTO();
         newChannelDTO.setName(channelEntity.getName());
-        newChannelDTO.setPhoto(channelEntity.getPhotoId());
+        newChannelDTO.setPhotoId(channelEntity.getPhotoId());
         newChannelDTO.setDescription(channelEntity.getDescription());
         newChannelDTO.setStatus(channelEntity.getStatus());
         newChannelDTO.setBanner(channelEntity.getBannerId());
@@ -55,7 +55,7 @@ public class ChannelService {
     public ChannelDTO updateChannel(ChannelDTO channelDTO, String id) {
        ChannelEntity entity=get(id);
        entity.setName(channelDTO.getName());
-       entity.setPhotoId(channelDTO.getPhoto());
+       entity.setPhotoId(channelDTO.getPhotoId());
        entity.setDescription(channelDTO.getDescription());
        entity.setStatus(channelDTO.getStatus());
        entity.setBannerId(channelDTO.getBanner());
@@ -137,7 +137,7 @@ public class ChannelService {
     public ChannelDTO getChannelListToDTO(ChannelEntity entity){
         ChannelDTO channelDTO=new ChannelDTO();
         channelDTO.setName(entity.getName());
-        channelDTO.setPhoto(entity.getPhotoId());
+        channelDTO.setPhotoId(entity.getPhotoId());
         channelDTO.setDescription(entity.getDescription());
         channelDTO.setStatus(entity.getStatus());
         channelDTO.setBanner(entity.getBannerId());

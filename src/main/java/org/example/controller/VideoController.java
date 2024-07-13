@@ -4,7 +4,10 @@ import io.jsonwebtoken.Header;
 import org.example.dto.video.VideoDTO;
 import org.example.dto.video.VideoUpdateDTO;
 import org.example.enums.VideoStatus;
+import org.example.mapper.VideoShortInfoMapper;
 import org.example.service.VideoService;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageImpl;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
@@ -29,8 +32,8 @@ public class VideoController {
     @PreAuthorize("hasRole('USER')")
     @PutMapping("/update/video/{id}")
     public ResponseEntity<Boolean> updateVideo(@RequestBody VideoUpdateDTO videoDTO,
-                                                      @PathVariable("id") String id) {
-         videoService.update(videoDTO, id);
+                                               @PathVariable("id") String id) {
+        videoService.update(videoDTO, id);
         return ResponseEntity.ok().body(true);
     }
 
@@ -47,4 +50,13 @@ public class VideoController {
         videoService.increaseViewCount(id);
         return ResponseEntity.ok().body("count increased by one");
     }
+
+    @PreAuthorize("hasRole('USER')")
+    @GetMapping("/pagination")
+    public ResponseEntity<PageImpl<VideoDTO>> pagination(@RequestParam(value = "page", defaultValue = "1") Integer page,
+                                                                     @RequestParam(value = "size", defaultValue = "10") Integer size) {
+        PageImpl<VideoDTO> pagination = videoService.pagination(page-1, size);
+        return ResponseEntity.ok().body(pagination);
+    }
+
 }

@@ -6,9 +6,16 @@ import org.example.dto.video.VideoUpdateDTO;
 import org.example.entity.VideoEntity;
 import org.example.enums.VideoStatus;
 import org.example.exp.AppBadException;
+import org.example.mapper.VideoShortInfoMapper;
 import org.example.repository.VideoRepository;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageImpl;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
+import java.util.LinkedList;
+import java.util.List;
 import java.util.Optional;
 
 @Slf4j
@@ -78,5 +85,17 @@ public class VideoService {
 
     public void increaseViewCount(String id) {
         videoRepository.increaseViewCount(id);
+    }
+
+    public PageImpl<VideoDTO> pagination(Integer page, Integer size) {
+        PageRequest pageRequest = PageRequest.of(page, size, Sort.by("createdDate").descending());
+        Page<VideoEntity> PageObj = videoRepository.findAll(pageRequest);
+        List<VideoDTO> videoList = new LinkedList<>();
+        for (VideoEntity entity : PageObj.getContent()) {
+            VideoDTO videoDTO = videoCreateToDTO(entity);
+            videoList.add(videoDTO);
+        }
+        Long total = PageObj.getTotalElements();
+        return new PageImpl<VideoDTO>(videoList, pageRequest, total);
     }
 }

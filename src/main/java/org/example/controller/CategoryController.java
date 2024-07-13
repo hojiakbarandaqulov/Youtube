@@ -28,7 +28,6 @@ public class CategoryController {
     @PutMapping("/admin/update/{id}")
     public ResponseEntity<Boolean> update(@PathVariable Integer id,@RequestBody CategoryDTO dto){
         return  ResponseEntity.ok().body(categoryService.update(id,dto));
-
     }
 
     @DeleteMapping("/admin/delete/{id}")

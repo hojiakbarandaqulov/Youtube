@@ -10,7 +10,8 @@
 
 ***
 10. Trigger - increase video view count. While inserting into VideoWatched  table.
-11. Notification send to subscribers (rabbitMq + httpRest + fireBase + simple front).
+11. Notification send to
+ (rabbitMq + httpRest + fireBase + simple front).
 12. Function (get like and dislike cout in one request.)
 
 *************** Youtube ***************

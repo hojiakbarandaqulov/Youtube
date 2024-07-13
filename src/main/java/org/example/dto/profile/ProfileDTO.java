@@ -3,6 +3,7 @@ package org.example.dto.profile;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import lombok.Getter;
 import lombok.Setter;
+import org.example.dto.AttachDTO;
 import org.example.enums.ProfileRole;
 import org.example.enums.ProfileStatus;
 
@@ -22,4 +23,6 @@ public class ProfileDTO {
     private ProfileStatus status;
     private Boolean visible;
     private LocalDateTime createdDate;
+    private AttachDTO attach;
+
 }

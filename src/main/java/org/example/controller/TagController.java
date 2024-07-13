@@ -44,4 +44,6 @@ public class TagController {
         List<TagAllDTO> all = tagService.getAll();
         return ResponseEntity.ok().body(all);
     }
+
+
 }

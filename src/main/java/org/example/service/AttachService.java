@@ -168,5 +168,14 @@ public class AttachService {
         attachRepository.delete(entity);
         return true;
     }
+
+    public AttachDTO getDTOWithURL(String attachId) {
+        AttachEntity attach = attachRepository.findById(attachId)
+                .orElseThrow(() -> new AppBadException("Attach not found"));
+        AttachDTO dto = new AttachDTO();
+        dto.setId(attachId);
+        dto.setUrl(serverUrl + "/" + "uploads/"+ attach.getPath() + "/" + attachId);
+        return dto;
+    }
 }
 

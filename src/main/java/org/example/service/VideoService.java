@@ -8,6 +8,7 @@ import org.example.enums.VideoStatus;
 import org.example.exp.AppBadException;
 import org.example.mapper.VideoShortInfoMapper;
 import org.example.repository.VideoRepository;
+import org.jetbrains.annotations.NotNull;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageImpl;
 import org.springframework.data.domain.PageRequest;
@@ -97,5 +98,33 @@ public class VideoService {
         }
         Long total = PageObj.getTotalElements();
         return new PageImpl<VideoDTO>(videoList, pageRequest, total);
+    }
+
+    public List<VideoDTO> videoByTitle(String title) {
+        List<VideoShortInfoMapper> titleList = videoRepository.findAllByTitle(title);
+        return getVideoDTOS(titleList);
+    }
+
+    public List<VideoDTO> tagPagination(Integer id) {
+        List<VideoShortInfoMapper> tagId = videoRepository.findAllByTagsId(id);
+        return getVideoDTOS(tagId);
+    }
+
+    @NotNull
+    private List<VideoDTO> getVideoDTOS(List<VideoShortInfoMapper> tagId) {
+        List<VideoDTO> videoDTOList = new LinkedList<>();
+        for (VideoShortInfoMapper entity : tagId) {
+            VideoDTO videoDTO=new VideoDTO();
+            videoDTO.setAttachId(entity.getPreviewAttachId());
+            videoDTO.setTitle(entity.getTitle());
+            videoDTO.setChannelId(entity.getChannelId());
+            videoDTO.setDescription(entity.getDescription());
+            videoDTO.setStatus(entity.getStatus());
+            videoDTO.setType(entity.getType());
+            videoDTO.setAttachId(entity.getAttachId());
+            videoDTO.setCategoryId(entity.getCategoryId());
+            videoDTOList.add(videoDTO);
+        }
+        return videoDTOList;
     }
 }

@@ -13,6 +13,8 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("/api/v1/video")
 public class VideoController {
@@ -59,4 +61,16 @@ public class VideoController {
         return ResponseEntity.ok().body(pagination);
     }
 
+    @PreAuthorize("hasRole('USER')")
+    @GetMapping("/by/{title}")
+    public ResponseEntity<List<VideoDTO>> getVideoByTitle(@PathVariable("title") String title) {
+        List<VideoDTO> response = videoService.videoByTitle(title);
+        return ResponseEntity.ok().body(response);
+    }
+    @PreAuthorize("hasRole('USER')")
+    @GetMapping("/tag/{id}")
+    public ResponseEntity<List<VideoDTO>> getVideoByTag(@PathVariable("id") Integer id) {
+        List<VideoDTO> response = videoService.tagPagination(id);
+        return ResponseEntity.ok().body(response);
+    }
 }

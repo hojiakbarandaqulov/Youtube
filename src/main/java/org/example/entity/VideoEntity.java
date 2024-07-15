@@ -66,6 +66,10 @@ public class VideoEntity {
     @JoinColumn(name = "channel_id",insertable = false, updatable = false)
     private ChannelEntity channel;
 
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "tag_id", insertable = false, updatable = false)
+    private TagEntity tags;
+
     @Column(name ="like_count")
     private Integer likeCount;
 

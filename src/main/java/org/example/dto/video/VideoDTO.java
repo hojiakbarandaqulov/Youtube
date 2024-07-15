@@ -12,6 +12,8 @@ import java.time.LocalDateTime;
 public class VideoDTO {
     @NotBlank(message = "title required")
     private String title;
+    @NotBlank(message = "previewAttachId required")
+    private String previewAttachId;
     @NotBlank(message = "description required")
     private String description;
     @NotBlank(message = "channelId required")

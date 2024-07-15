@@ -2,8 +2,6 @@ package org.example.repository;
 
 import org.example.entity.VideoEntity;
 import org.example.mapper.VideoShortInfoMapper;
-import org.springdoc.core.converters.models.Pageable;
-import org.springframework.data.domain.PageRequest;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
@@ -19,5 +17,8 @@ public interface VideoRepository extends JpaRepository<VideoEntity, String> {
     @Query("UPDATE VideoEntity set viewCount = COALESCE(viewCount,0)+1 where id=?1")
     void increaseViewCount(String id);
 
-    Optional<VideoShortInfoMapper> getVideoList(PageRequest pageable);
+
+    List<VideoShortInfoMapper> findAllByTitle(String title);
+
+    List<VideoShortInfoMapper> findAllByTagsId(Integer id);
 }

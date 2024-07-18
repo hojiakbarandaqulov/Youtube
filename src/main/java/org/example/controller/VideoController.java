@@ -67,10 +67,18 @@ public class VideoController {
         List<VideoDTO> response = videoService.videoByTitle(title);
         return ResponseEntity.ok().body(response);
     }
+
     @PreAuthorize("hasRole('USER')")
     @GetMapping("/tag/{id}")
     public ResponseEntity<List<VideoDTO>> getVideoByTag(@PathVariable("id") Integer id) {
         List<VideoDTO> response = videoService.tagPagination(id);
         return ResponseEntity.ok().body(response);
     }
+
+   /* @PreAuthorize("hasRole('USER')")
+    @DeleteMapping("/{id}")
+    public ResponseEntity<VideoDTO> getVideoById(@PathVariable("id") String id) {
+        videoService.
+                return ResponseEntity.ok().body();
+    }*/
 }

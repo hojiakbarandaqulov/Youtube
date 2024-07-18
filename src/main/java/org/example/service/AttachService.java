@@ -5,6 +5,7 @@ import org.example.entity.AttachEntity;
 import org.example.exp.AppBadException;
 import org.example.repository.AttachRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.core.io.Resource;
 import org.springframework.core.io.UrlResource;
@@ -31,16 +32,13 @@ public class AttachService {
 
     @Value("${server.url}")
     private String serverUrl;
-
     private final AttachRepository attachRepository;
 
     @Value("${attach.upload.url}")
     public String attachUrl;
 
-    @Autowired
     public AttachService(AttachRepository attachRepository) {
         this.attachRepository = attachRepository;
-
     }
 
     public byte[] loadImage(String fileName) {
@@ -50,7 +48,6 @@ public class AttachService {
         } catch (Exception e) {
             return new byte[0];
         }
-
         try {
             ByteArrayOutputStream baos = new ByteArrayOutputStream();
             ImageIO.write(originalImage, "png", baos);
@@ -100,7 +97,6 @@ public class AttachService {
             entity.setExtension(extension);
             entity.setCreatedDate(LocalDateTime.now());
             attachRepository.save(entity);
-
             return toDTO(entity);
         } catch (IOException e) {
             e.printStackTrace();
@@ -121,9 +117,7 @@ public class AttachService {
     }
 
     public AttachEntity get(String id) {
-        return attachRepository.findById(id).orElseThrow(() -> {
-            throw new AppBadException("Attach not found");
-        });
+        return attachRepository.findById(id).orElseThrow(() -> new AppBadException("Attach not found"));
     }
 
     public ResponseEntity download(String attachId) {
@@ -174,7 +168,7 @@ public class AttachService {
                 .orElseThrow(() -> new AppBadException("Attach not found"));
         AttachDTO dto = new AttachDTO();
         dto.setId(attachId);
-        dto.setUrl(serverUrl + "/" + "uploads/"+ attach.getPath() + "/" + attachId);
+        dto.setUrl(serverUrl + "/" + "uploads/" + attach.getPath() + "/" + attachId);
         return dto;
     }
 }

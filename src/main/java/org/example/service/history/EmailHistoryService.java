@@ -3,7 +3,7 @@ package org.example.service.history;
 import org.example.dto.history.EmailDTO;
 import org.example.dto.history.EmailFilterDTO;
 import org.example.entity.history.EmailHistoryEntity;
-import org.example.enums.EmailHistoryStatus;
+//import org.example.enums.EmailHistoryStatus;
 import org.example.enums.LanguageEnum;
 import org.example.exp.AppBadException;
 import org.example.repository.EmailHistoryRepository;
@@ -33,7 +33,6 @@ public class EmailHistoryService {
         }
         entity.setEmail(toEmail);
         entity.setMessage(text);
-        entity.setStatus(EmailHistoryStatus.SENT);
         emailHistoryRepository.save(entity);
     }
 

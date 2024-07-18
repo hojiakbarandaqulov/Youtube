@@ -18,7 +18,10 @@ public interface EmailHistoryRepository extends JpaRepository<EmailHistoryEntity
 
     // select count(*) from email_history createdDate between :from and :to
 //    @Query("select e from EmailHistoryEntity e where e.email=:email order by e.createdDate DESC ")
-    Optional<EmailHistoryEntity> findTopByEmailOrderByCreatedDateDesc(/*@Param("email")*/ String email);
+//    Optional<EmailHistoryEntity> findTopByEmailOrderByCreatedDateDesc(/*@Param("email")*/ String email);
+
+    @Query(value = "SELECT * FROM email_history u WHERE u.email = :email ORDER BY u.created_date DESC LIMIT 1", nativeQuery = true)
+    Optional<EmailHistoryEntity> findTopByEmailOrderByCreatedDateDesc(@Param("email") String email);
 
     Optional<EmailHistoryEntity> findByCreatedDate(LocalDateTime createdDate);
 

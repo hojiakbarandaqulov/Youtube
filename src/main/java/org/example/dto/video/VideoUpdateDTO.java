@@ -18,4 +18,5 @@ public class VideoUpdateDTO {
     private String attachId;
     @NotBlank(message = "categoryId required")
     private Integer categoryId;
+
 }

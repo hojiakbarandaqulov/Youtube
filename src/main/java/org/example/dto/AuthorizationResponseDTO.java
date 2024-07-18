@@ -16,4 +16,5 @@ public class AuthorizationResponseDTO {
     @NotBlank(message = "role required")
     private ProfileRole role;
     private String jwt;
+
 }

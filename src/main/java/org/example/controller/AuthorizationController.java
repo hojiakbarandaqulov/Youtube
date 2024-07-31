@@ -43,9 +43,9 @@ public class AuthorizationController {
     }
 
     @GetMapping("/verification/{userId}")
-    public ResponseEntity<String> verification(@PathVariable("userId") Integer userId,
+    public ResponseEntity<String> verification(@PathVariable("userId") Long userId,
                                                @RequestHeader(value = "Accept-Language",defaultValue = "UZ")LanguageEnum language) {
-        String body = authorizationService.authorizationVerification(userId, language);
+        String body = authorizationService.authorizationVerification(userId,language);
         log.info("verification userId = {} email = {}",userId,body);
         return ResponseEntity.ok().body(body);
     }

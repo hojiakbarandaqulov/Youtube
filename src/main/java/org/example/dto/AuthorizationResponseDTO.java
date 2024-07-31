@@ -8,7 +8,7 @@ import org.example.enums.ProfileRole;
 @Data
 public class AuthorizationResponseDTO {
     @NotNull
-    private Integer id;
+    private Long id;
     @NotBlank(message = "name required")
     private String name;
     @NotBlank(message = "surname required")

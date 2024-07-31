@@ -59,7 +59,7 @@ public class AuthorizationService {
         return resourceBundleMessageSource.getMessage("email.registration.verify", null, new Locale(language.name()));
     }
 
-    public String authorizationVerification(Integer userId, LanguageEnum language) {
+    public String authorizationVerification(Long userId, LanguageEnum language) {
         Optional<ProfileEntity> optional = profileRepository.findById(userId);
         if (optional.isEmpty()) {
             log.warn("User not found => {}", userId);
@@ -125,7 +125,7 @@ public class AuthorizationService {
         return message;
     }
 
-    public void sendRegistrationRandomCodeEmail(Integer profileId, String email) {
+    public void sendRegistrationRandomCodeEmail(Long profileId, String email) {
         // send email
         String url = "http://localhost:8080/auth/verification/" + profileId;
         String text = String.format(RandomUtil.getRandomSmsCode(), url);
@@ -133,7 +133,7 @@ public class AuthorizationService {
         emailHistoryService.crete(email, text); // create history
     }
 
-    public void sendRegistrationEmail(Integer profileId, String email) {
+    public void sendRegistrationEmail(Long profileId, String email) {
         // send email
         String url = "http://localhost:8080/auth/verification/" + profileId;
         String formatText = "<style>\n" +

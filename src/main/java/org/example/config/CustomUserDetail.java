@@ -13,7 +13,6 @@ import java.util.LinkedList;
 import java.util.List;
 @Getter
 public class CustomUserDetail implements UserDetails {
-
     private ProfileEntity profile;
 
     public CustomUserDetail(ProfileEntity profile) {
@@ -56,5 +55,4 @@ public class CustomUserDetail implements UserDetails {
     public boolean isEnabled() {
         return profile.getVisible();
     }
-
 }

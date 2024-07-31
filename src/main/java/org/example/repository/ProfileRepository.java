@@ -9,11 +9,11 @@ import org.springframework.data.jpa.repository.Query;
 
 import java.util.Optional;
 
-public interface ProfileRepository extends JpaRepository<ProfileEntity, Integer> {
+public interface ProfileRepository extends JpaRepository<ProfileEntity, Long> {
    Optional<ProfileEntity> findByEmailAndVisibleTrue(String email);
 
    @Transactional
    @Modifying
    @Query("update ProfileEntity set status =?2 where id =?1")
-   void updateStatus(Integer profileId, ProfileStatus status);
+   void updateStatus(Long profileId, ProfileStatus status);
 }

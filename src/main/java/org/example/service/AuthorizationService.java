@@ -38,6 +38,7 @@ public class AuthorizationService {
         this.resourceBundleMessageSource = resourceBundleMessageSource;
     }
 
+    //
     public String registration(RegistrationDTO dto, LanguageEnum language) {
         Optional<ProfileEntity> optional = profileRepository.findByEmailAndVisibleTrue(dto.getEmail());
         if (optional.isPresent()) {

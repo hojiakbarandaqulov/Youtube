@@ -34,6 +34,7 @@ public class AuthorizationController {
         return ResponseEntity.ok().body(registration);
     }
 
+    // Bu Youtube.com web saytiga login methodi
     @PostMapping("/login")
     public ResponseEntity<AuthorizationResponseDTO> login(@Valid @RequestBody LoginDTO loginDTO,
                                                           @RequestHeader(value = "Accept-Language", defaultValue = "UZ") LanguageEnum language){

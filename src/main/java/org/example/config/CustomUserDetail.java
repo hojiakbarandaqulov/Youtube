@@ -14,7 +14,7 @@ import java.util.List;
 @Getter
 public class CustomUserDetail implements UserDetails {
 
-    private ProfileEntity profile;
+    private final ProfileEntity profile;
 
     public CustomUserDetail(ProfileEntity profile) {
         this.profile = profile;

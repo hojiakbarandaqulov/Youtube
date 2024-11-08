@@ -12,6 +12,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
+
 @Slf4j
 @RestController
 @RequestMapping("/attach")
@@ -54,6 +55,4 @@ public class AttachController {
         Boolean delete = attachService.delete(id);
         return ResponseEntity.ok().body(delete);
     }
-
-
 }

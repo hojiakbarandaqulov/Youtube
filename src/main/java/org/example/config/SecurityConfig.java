@@ -48,7 +48,6 @@ public class SecurityConfig {
         // authorization
         http.authorizeHttpRequests(authorizationManagerRequestMatcherRegistry -> {
             authorizationManagerRequestMatcherRegistry
-
                     .requestMatchers("/v2/api-docs").permitAll()
                     .requestMatchers("/v3/api-docs").permitAll()
                     .requestMatchers("/v3/api-docs/**").permitAll()

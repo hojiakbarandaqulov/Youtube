@@ -21,7 +21,7 @@ import java.util.List;
                         url = "https://kitabu.uz/"
                 ),
                 description = "This API exposes endpoints to manage tutorials.",
-                title = "Kun.uz Management API",
+                title = "Interview.uz Management API",
                 version = "1.0",
                 license = @License(
                         name = "Videohub",

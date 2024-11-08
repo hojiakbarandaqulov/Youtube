@@ -7,7 +7,6 @@ import java.time.LocalDateTime;
 
 @Data
 public class CategoryDTO {
-
     @NotBlank(message = "category name is required")
     private String name ;
 

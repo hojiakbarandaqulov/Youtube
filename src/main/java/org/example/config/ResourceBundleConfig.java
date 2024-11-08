@@ -17,5 +17,4 @@ public class ResourceBundleConfig {
         messageSource.setDefaultLocale(new Locale("uz")); // if local not found use this
         return messageSource;
     }
-
 }

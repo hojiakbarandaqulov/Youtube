@@ -73,7 +73,7 @@ public class PlayListController {
         return ResponseEntity.status(HttpStatus.OK).body(response);
     }
 
-    @GetMapping("/byId")  ////////  MAZGI BU CHALA QOLDI
+    @GetMapping("/byId")
     public ResponseEntity<PlayListEntity> getByPlaylistId(@RequestParam Long playlistId) {
         PlayListEntity response = playListService.getByPlaylistId(playlistId);
         return ResponseEntity.status(HttpStatus.OK).body(response);

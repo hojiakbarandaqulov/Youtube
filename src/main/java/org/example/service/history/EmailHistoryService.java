@@ -81,7 +81,7 @@ public class EmailHistoryService {
         for (EmailHistoryEntity emailEntity : all.getContent()) {
             email.add(emailDTO(emailEntity));
         }
-        Long totalCount = all.getTotalElements();
+        long totalCount = all.getTotalElements();
         return new PageImpl<EmailDTO>(email, pageable, totalCount);
     }
 

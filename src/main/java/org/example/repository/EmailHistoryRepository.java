@@ -25,6 +25,4 @@ public interface EmailHistoryRepository extends JpaRepository<EmailHistoryEntity
 
     Optional<EmailHistoryEntity> findByCreatedDate(LocalDateTime createdDate);
 
-    @NotNull
-    Page<EmailHistoryEntity> findAll(@NotNull Pageable pageable);
 }

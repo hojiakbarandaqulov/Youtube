@@ -1,18 +1,18 @@
-28 Dec 2024 - 20:12:10.087 [main] INFO  org.example.YoutubeApplication - Starting YoutubeApplication using Java 17.0.12 with PID 19848 (D:\JavaProject\Youtube\target\classes started by Xojiakbar in D:\JavaProject\Youtube)
-28 Dec 2024 - 20:12:10.106 [main] INFO  org.example.YoutubeApplication - The following 1 profile is active: "dev"
-28 Dec 2024 - 20:12:11.496 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-28 Dec 2024 - 20:12:11.645 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 134 ms. Found 8 JPA repository interfaces.
-28 Dec 2024 - 20:12:12.466 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
-28 Dec 2024 - 20:12:12.482 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
-28 Dec 2024 - 20:12:12.483 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.25]
-28 Dec 2024 - 20:12:12.561 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
-28 Dec 2024 - 20:12:12.561 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 2409 ms
-28 Dec 2024 - 20:12:12.696 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
-28 Dec 2024 - 20:12:12.751 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.5.2.Final
-28 Dec 2024 - 20:12:12.783 [main] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
-28 Dec 2024 - 20:12:13.127 [main] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
-28 Dec 2024 - 20:12:13.152 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
-28 Dec 2024 - 20:12:14.271 [main] WARN  o.h.e.j.e.i.JdbcEnvironmentInitiator - HHH000342: Could not obtain connection to query metadata
+11 Jan 2025 - 08:46:40.198 [main] INFO  org.example.YoutubeApplication - Starting YoutubeApplication using Java 17.0.12 with PID 18960 (D:\JavaProject\Youtube\target\classes started by Xojiakbar in D:\JavaProject\Youtube)
+11 Jan 2025 - 08:46:40.226 [main] INFO  org.example.YoutubeApplication - The following 1 profile is active: "dev"
+11 Jan 2025 - 08:46:41.597 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+11 Jan 2025 - 08:46:41.717 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 106 ms. Found 8 JPA repository interfaces.
+11 Jan 2025 - 08:46:42.409 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+11 Jan 2025 - 08:46:42.423 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+11 Jan 2025 - 08:46:42.424 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.25]
+11 Jan 2025 - 08:46:42.498 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+11 Jan 2025 - 08:46:42.498 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 2218 ms
+11 Jan 2025 - 08:46:42.663 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+11 Jan 2025 - 08:46:42.741 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.5.2.Final
+11 Jan 2025 - 08:46:42.788 [main] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+11 Jan 2025 - 08:46:43.168 [main] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+11 Jan 2025 - 08:46:43.201 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+11 Jan 2025 - 08:46:44.349 [main] WARN  o.h.e.j.e.i.JdbcEnvironmentInitiator - HHH000342: Could not obtain connection to query metadata
 java.lang.NullPointerException: Cannot invoke "org.hibernate.engine.jdbc.spi.SqlExceptionHelper.convert(java.sql.SQLException, String)" because the return value of "org.hibernate.resource.transaction.backend.jdbc.internal.JdbcIsolationDelegate.sqlExceptionHelper()" is null
 	at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcIsolationDelegate.delegateWork(JdbcIsolationDelegate.java:116)
 	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.getJdbcEnvironmentUsingJdbcMetadata(JdbcEnvironmentInitiator.java:290)
@@ -136,19 +136,19 @@ java.lang.NullPointerException: Cannot invoke "org.hibernate.engine.jdbc.spi.Sql
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1363)
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1352)
 	at org.example.YoutubeApplication.main(YoutubeApplication.java:10)
-28 Dec 2024 - 20:12:14.305 [main] WARN  org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
-28 Dec 2024 - 20:12:15.694 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-28 Dec 2024 - 20:12:15.719 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
-28 Dec 2024 - 20:12:16.777 [main] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Error: 0, SQLState: 28P01
-28 Dec 2024 - 20:12:16.778 [main] ERROR o.h.e.jdbc.spi.SqlExceptionHelper - FATAL: password authentication failed for user "postgres"
-28 Dec 2024 - 20:12:16.814 [main] ERROR o.s.o.j.LocalContainerEntityManagerFactoryBean - Failed to initialize JPA EntityManagerFactory: [PersistenceUnit: default] Unable to build Hibernate SessionFactory; nested exception is org.hibernate.exception.GenericJDBCException: Unable to open JDBC Connection for DDL execution [FATAL: password authentication failed for user "postgres"] [n/a]
-28 Dec 2024 - 20:12:16.815 [main] ERROR o.s.b.w.e.tomcat.TomcatStarter - Error starting Tomcat context. Exception: org.springframework.beans.factory.UnsatisfiedDependencyException. Message: Error creating bean with name 'jwtTokenFilter' defined in file [D:\JavaProject\Youtube\target\classes\org\example\config\JwtTokenFilter.class]: Unsatisfied dependency expressed through constructor parameter 0: Error creating bean with name 'customUserDetailService' defined in file [D:\JavaProject\Youtube\target\classes\org\example\config\CustomUserDetailService.class]: Unsatisfied dependency expressed through constructor parameter 0: Error creating bean with name 'profileRepository' defined in org.example.repository.ProfileRepository defined in @EnableJpaRepositories declared on JpaRepositoriesRegistrar.EnableJpaRepositoriesConfiguration: Cannot resolve reference to bean 'jpaSharedEM_entityManagerFactory' while setting bean property 'entityManager'
-28 Dec 2024 - 20:12:16.857 [main] INFO  o.a.catalina.core.StandardService - Stopping service [Tomcat]
-28 Dec 2024 - 20:12:16.866 [main] WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Unable to start web server
-28 Dec 2024 - 20:12:16.877 [main] INFO  o.s.b.a.l.ConditionEvaluationReportLogger - 
+11 Jan 2025 - 08:46:44.428 [main] WARN  org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+11 Jan 2025 - 08:46:45.775 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+11 Jan 2025 - 08:46:45.806 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+11 Jan 2025 - 08:46:46.859 [main] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Error: 0, SQLState: 28P01
+11 Jan 2025 - 08:46:46.859 [main] ERROR o.h.e.jdbc.spi.SqlExceptionHelper - FATAL: password authentication failed for user "postgres"
+11 Jan 2025 - 08:46:46.897 [main] ERROR o.s.o.j.LocalContainerEntityManagerFactoryBean - Failed to initialize JPA EntityManagerFactory: [PersistenceUnit: default] Unable to build Hibernate SessionFactory; nested exception is org.hibernate.exception.GenericJDBCException: Unable to open JDBC Connection for DDL execution [FATAL: password authentication failed for user "postgres"] [n/a]
+11 Jan 2025 - 08:46:46.898 [main] ERROR o.s.b.w.e.tomcat.TomcatStarter - Error starting Tomcat context. Exception: org.springframework.beans.factory.UnsatisfiedDependencyException. Message: Error creating bean with name 'jwtTokenFilter' defined in file [D:\JavaProject\Youtube\target\classes\org\example\config\JwtTokenFilter.class]: Unsatisfied dependency expressed through constructor parameter 0: Error creating bean with name 'customUserDetailService' defined in file [D:\JavaProject\Youtube\target\classes\org\example\config\CustomUserDetailService.class]: Unsatisfied dependency expressed through constructor parameter 0: Error creating bean with name 'profileRepository' defined in org.example.repository.ProfileRepository defined in @EnableJpaRepositories declared on JpaRepositoriesRegistrar.EnableJpaRepositoriesConfiguration: Cannot resolve reference to bean 'jpaSharedEM_entityManagerFactory' while setting bean property 'entityManager'
+11 Jan 2025 - 08:46:46.939 [main] INFO  o.a.catalina.core.StandardService - Stopping service [Tomcat]
+11 Jan 2025 - 08:46:46.947 [main] WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Unable to start web server
+11 Jan 2025 - 08:46:46.964 [main] INFO  o.s.b.a.l.ConditionEvaluationReportLogger - 
 
 Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
-28 Dec 2024 - 20:12:16.899 [main] ERROR o.s.boot.SpringApplication - Application run failed
+11 Jan 2025 - 08:46:46.991 [main] ERROR o.s.boot.SpringApplication - Application run failed
 org.springframework.context.ApplicationContextException: Unable to start web server
 	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.onRefresh(ServletWebServerApplicationContext.java:165)
 	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:618)

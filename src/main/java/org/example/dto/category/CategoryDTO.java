@@ -9,5 +9,4 @@ import java.time.LocalDateTime;
 public class CategoryDTO {
     @NotBlank(message = "category name is required")
     private String name ;
-
 }

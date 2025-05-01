@@ -25,6 +25,17 @@ public class ProfileService {
             return toDTO(save);
     }
 
+    public Boolean changePassword(ProfileChangePasswordDTO dto) {
+        Integer profileId = SecurityUtil.getProfileId();
+        ProfileEntity entity= get(profileId);
+        if (!entity.getPassword().equals(MD5Util.getMD5(entity.getPassword()))){
+           throw new AppBadException("Old password wrong");
+        }
+        entity.setPassword(dto.getNewPassword());
+        profileRepository.save(entity);
+        return true;
+    }
+
     public ProfileEntity get(Integer id) {
         return profileRepository.findById(id).orElseThrow(() -> {
             logger.error("Profile not found id = {}", id);
@@ -52,16 +63,5 @@ public class ProfileService {
         dto.setStatus(entity.getStatus());
         dto.setCreatedDate(entity.getCreatedDate());
         return dto;
-    }
-
-    public Boolean changePassword(ProfileChangePasswordDTO dto) {
-        Integer profileId = SecurityUtil.getProfileId();
-        ProfileEntity entity= get(profileId);
-        if (!entity.getPassword().equals(MD5Util.getMD5(entity.getPassword()))){
-           throw new AppBadException("Old password wrong");
-        }
-        entity.setPassword(dto.getNewPassword());
-        profileRepository.save(entity);
-        return true;
     }
 }

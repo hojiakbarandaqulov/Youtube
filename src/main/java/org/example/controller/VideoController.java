@@ -56,8 +56,8 @@ public class VideoController {
     @PreAuthorize("hasRole('USER')")
     @GetMapping("/pagination")
     public ResponseEntity<PageImpl<VideoDTO>> pagination(@RequestParam(value = "page", defaultValue = "1") Integer page,
-                                                                     @RequestParam(value = "size", defaultValue = "10") Integer size) {
-        PageImpl<VideoDTO> pagination = videoService.pagination(page-1, size);
+                                                         @RequestParam(value = "size", defaultValue = "10") Integer size) {
+        PageImpl<VideoDTO> pagination = videoService.pagination(page - 1, size);
         return ResponseEntity.ok().body(pagination);
     }
 

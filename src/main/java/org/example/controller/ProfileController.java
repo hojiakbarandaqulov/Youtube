@@ -25,6 +25,7 @@ public class ProfileController {
         ProfileDTO response = profileService.create(dto);
         return ResponseEntity.ok(response);
     }
+
     @PreAuthorize("hasAnyRole('ROLE_ADMIN', 'ROLE_USER')")
     @PostMapping(value = "/change/password")
     public ResponseEntity<Boolean> changePassword(@Valid @RequestBody ProfileChangePasswordDTO dto){

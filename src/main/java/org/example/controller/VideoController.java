@@ -75,6 +75,7 @@ public class VideoController {
         return ResponseEntity.ok().body(response);
     }
 
+
    /* @PreAuthorize("hasRole('USER')")
     @DeleteMapping("/{id}")
     public ResponseEntity<VideoDTO> getVideoById(@PathVariable("id") String id) {

@@ -53,4 +53,5 @@ public class EmailCustomRepository {
 
         return new FilterResponseDTO<EmailHistoryEntity>(studentEntityList, totalCount);
     }
+
 }

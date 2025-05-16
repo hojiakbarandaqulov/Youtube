@@ -21,4 +21,5 @@ public interface VideoRepository extends JpaRepository<VideoEntity, String> {
     List<VideoShortInfoMapper> findAllByTitle(String title);
 
     List<VideoShortInfoMapper> findAllByTagsId(Integer id);
+
 }

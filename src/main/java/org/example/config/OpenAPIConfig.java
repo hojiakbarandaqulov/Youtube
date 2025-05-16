@@ -54,6 +54,7 @@ public class OpenAPIConfig {
     @Value("${server.url}")
     private String url;
 
+
     @Bean
     public OpenAPI myOpenAPI() {
         Server devServer = new Server();
